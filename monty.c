@@ -16,10 +16,8 @@ int main(int argc, char **argv)
 	unsigned int line_number = 1;
 	stack_t *stack = NULL;
 	void (*exec_instruction)(stack_t **, unsigned int) = NULL;
-	/* char *opcode = NULL; */
 
 	validate_args_count(argc);
-
 	open_monty_file(argv[1], &file);
 
 	while (fgets(buffer, BUFFER_SIZE, file) != NULL)
@@ -40,11 +38,9 @@ int main(int argc, char **argv)
 			free(push_arg);
 		push_arg = NULL;
 	}
-	free(stack);
-	if (feof(file))
-		exit(EXIT_SUCCESS);
-	if (ferror(file))
-		exit(EXIT_FAILURE);
+	free_stack(stack);
+	clean_up_file(&file);
+	fclose(file);
 
 	return (0);
 }

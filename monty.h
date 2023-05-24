@@ -58,5 +58,7 @@ void swap_top_two(stack_t **stack, unsigned int line_number);
 void add_top_two(stack_t **stack, unsigned int line_number);
 void do_nothing(stack_t **stack, unsigned int line_number);
 void (*get_opcode_func(char *s))(stack_t **, unsigned int);
+void free_stack(stack_t *stack);
+void clean_up_file(FILE **file);
 
 #endif
