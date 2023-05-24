@@ -11,6 +11,7 @@ void div_top_two(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		execution_failed = 1;
+		return;
 	}
 	if ((*stack)->n == 0)
 	{
