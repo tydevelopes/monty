@@ -1,6 +1,7 @@
 #include "monty.h"
 
 char *push_arg = NULL;
+char *opcode = NULL;
 
 /**
  * main - program starting point
@@ -13,7 +14,9 @@ int main(int argc, char **argv)
 	FILE *file = NULL;
 	char buffer[BUFFER_SIZE] = {0};
 	int line_number = 1;
-	char *opcode = NULL;
+	stack_tt *stack = NULL;
+	void (*exec_instruction)(stack_tt **, int) = NULL;
+	/* char *opcode = NULL; */
 
 	validate_args_count(argc);
 
@@ -28,7 +31,8 @@ int main(int argc, char **argv)
 			continue;
 		}
 		validate_opcode(opcode, line_number);
-		execute_instruction(opcode, line_number);
+		exec_instruction = get_opcode_func(opcode);
+		exec_instruction(&stack, line_number);
 
 		line_number++;
 		free(opcode);
@@ -36,8 +40,11 @@ int main(int argc, char **argv)
 			free(push_arg);
 		push_arg = NULL;
 	}
+	free(stack);
 	if (feof(file))
 		exit(EXIT_SUCCESS);
 	if (ferror(file))
 		exit(EXIT_FAILURE);
+
+	return (0);
 }

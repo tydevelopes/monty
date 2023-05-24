@@ -9,6 +9,7 @@
 #define BUFFER_SIZE 1024
 
 extern char *push_arg;
+extern char *opcode;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -45,6 +46,15 @@ void open_monty_file(char *filename, FILE **file);
 void check_malloc(char *ptr);
 char *parse_line(char *str);
 void validate_opcode(char *opcode, int line_number);
-void execute_instruction(char *opcode, int line_number);
+int is_all_digits(char *s);
+void push_to_stack(stack_tt **stack, int line_number);
+void print_stack(stack_tt **stack, int line_number);
+void print_top_of_stack(stack_tt **stack, int line_number);
+void delete_top_of_stack(stack_tt **stack, int line_number);
+size_t stack_length(const stack_tt *stack);
+void swap_top_two(stack_tt **stack, int line_number);
+void add_top_two(stack_tt **stack, int line_number);
+void do_nothing(stack_tt **stack, int line_number);
+void (*get_opcode_func(char *s))(stack_tt **, int);
 
 #endif
