@@ -5,10 +5,8 @@
  * @stack: pointer to the list
  * @line_number: line number
  */
-void add_top_two(stack_tt **stack, int line_number)
+void add_top_two(stack_tt **stack, unsigned int line_number)
 {
-	stack_tt *temp = NULL;
-
 	if (!stack || !*stack || stack_length(*stack) < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);

@@ -5,7 +5,7 @@
  * @opcode: pointer to opcode
  * @line_number: line number of opcode
  */
-void validate_opcode(char *opcode, int line_number)
+void validate_opcode(char *opcode, unsigned int line_number)
 {
 	char *opcodes[] = {"push", "pall", "pint", "pop", "swap", "add", "nop", NULL};
 	int i = 0;

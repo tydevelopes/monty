@@ -13,9 +13,9 @@ int main(int argc, char **argv)
 {
 	FILE *file = NULL;
 	char buffer[BUFFER_SIZE] = {0};
-	int line_number = 1;
+	unsigned int line_number = 1;
 	stack_tt *stack = NULL;
-	void (*exec_instruction)(stack_tt **, int) = NULL;
+	void (*exec_instruction)(stack_tt **, unsigned int) = NULL;
 	/* char *opcode = NULL; */
 
 	validate_args_count(argc);

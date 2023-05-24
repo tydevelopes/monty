@@ -5,7 +5,7 @@
  * @stack: pointer to the list
  * @line_number: line number
  */
-void swap_top_two(stack_tt **stack, int line_number)
+void swap_top_two(stack_tt **stack, unsigned int line_number)
 {
 	stack_tt *temp = NULL;
 

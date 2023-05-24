@@ -5,7 +5,7 @@
  * @stack: pointer to the list
  * @line_number: line number
  */
-void delete_top_of_stack(stack_tt **stack, int line_number)
+void delete_top_of_stack(stack_tt **stack, unsigned int line_number)
 {
 	stack_tt *temp = NULL;
 

@@ -31,14 +31,14 @@ char *parse_line(char *str)
 		if (tokens_count == 0)
 		{
 			opcode = malloc(sizeof(char) * (strlen(buffer) + 1));
-			check_malloc(opcode);
+			check_malloc_c(opcode);
 			strcpy(opcode, buffer);
 			tokens_count = 1;
 		}
 		else if (tokens_count == 1)
 		{
 			push_arg = malloc(sizeof(char) * (strlen(buffer) + 1));
-			check_malloc(push_arg);
+			check_malloc_c(push_arg);
 			strcpy(push_arg, buffer);
 			break;
 		}

@@ -5,7 +5,7 @@
  * @s: opcode passed as argument to the program
  * Return: a pointer to the func that corresponds to the opcode given
  */
-void (*get_opcode_func(char *s))(stack_tt **, int)
+void (*get_opcode_func(char *s))(stack_tt **, unsigned int)
 {
 	instruction_t instructions[] = {
 	    {"push", push_to_stack},

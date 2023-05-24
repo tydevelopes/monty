@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
 
 #define BUFFER_SIZE 1024
 
@@ -43,18 +44,19 @@ typedef struct instruction_s
 
 void validate_args_count(int argc);
 void open_monty_file(char *filename, FILE **file);
-void check_malloc(char *ptr);
+void check_malloc_s(stack_tt *ptr);
+void check_malloc_c(char *ptr);
 char *parse_line(char *str);
-void validate_opcode(char *opcode, int line_number);
+void validate_opcode(char *opcode, unsigned int line_number);
 int is_all_digits(char *s);
-void push_to_stack(stack_tt **stack, int line_number);
-void print_stack(stack_tt **stack, int line_number);
-void print_top_of_stack(stack_tt **stack, int line_number);
-void delete_top_of_stack(stack_tt **stack, int line_number);
+void push_to_stack(stack_tt **stack, unsigned int line_number);
+void print_stack(stack_tt **stack, unsigned int line_number);
+void print_top_of_stack(stack_tt **stack, unsigned int line_number);
+void delete_top_of_stack(stack_tt **stack, unsigned int line_number);
 size_t stack_length(const stack_tt *stack);
-void swap_top_two(stack_tt **stack, int line_number);
-void add_top_two(stack_tt **stack, int line_number);
-void do_nothing(stack_tt **stack, int line_number);
-void (*get_opcode_func(char *s))(stack_tt **, int);
+void swap_top_two(stack_tt **stack, unsigned int line_number);
+void add_top_two(stack_tt **stack, unsigned int line_number);
+void do_nothing(stack_tt **stack, unsigned int line_number);
+void (*get_opcode_func(char *s))(stack_tt **, unsigned int);
 
 #endif

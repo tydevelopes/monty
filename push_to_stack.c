@@ -5,7 +5,7 @@
  * @stack: pointer to stack pointer to the list
  * @line_number: line number
  */
-void push_to_stack(stack_tt **stack, int line_number)
+void push_to_stack(stack_tt **stack, unsigned int line_number)
 {
 	stack_tt *current_node = NULL;
 
@@ -15,7 +15,7 @@ void push_to_stack(stack_tt **stack, int line_number)
 		exit(EXIT_FAILURE);
 	}
 	current_node = malloc(sizeof(stack_tt));
-	check_malloc(current_node);
+	check_malloc_s(current_node);
 
 	current_node->n = atoi(push_arg);
 	current_node->next = NULL;
