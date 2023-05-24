@@ -14,7 +14,7 @@ void swap_top_two(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if (stack_length(*stack) >= 2)
+	if (stack_length(*stack) == 2)
 	{
 		temp = *stack;
 		*stack = (*stack)->next;
@@ -22,17 +22,17 @@ void swap_top_two(stack_t **stack, unsigned int line_number)
 		(*stack)->next = temp;
 		temp->next = NULL;
 		temp->prev = *stack;
-		temp = NULL;
+		/*temp = NULL;*/
 	}
 	else
 	{
 		temp = *stack;
 		*stack = (*stack)->next;
 		(*stack)->prev = NULL;
-		temp->next = temp->next->next;
+		temp->next = (*stack)->next;
 		temp->prev = *stack;
 		(*stack)->next = temp;
 		temp->next->prev = temp;
-		temp = NULL;
+		/*temp = NULL;*/
 	}
 }
