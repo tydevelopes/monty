@@ -30,13 +30,13 @@ int main(int argc, char **argv)
 			continue;
 		}
 		validate_opcode(opcode, line_number);
+		if (execution_failed)
+			clean_up_and_exit(stack, file);
+			
 		exec_instruction = get_opcode_func(opcode);
 		exec_instruction(&stack, line_number);
-
 		if (execution_failed)
-		{
 			clean_up_and_exit(stack, file);
-		}
 		line_number++;
 		free(opcode);
 		opcode = NULL;

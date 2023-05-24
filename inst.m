@@ -2,4 +2,4 @@
 			push		3
 
 pint
-pall
+palls
