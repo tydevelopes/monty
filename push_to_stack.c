@@ -11,7 +11,7 @@ void push_to_stack(stack_t **stack, unsigned int line_number)
 
 	if (!push_arg || !is_all_digits(push_arg))
 	{
-		fprintf(stderr, "L%d: usage: push integer %s\n", line_number, opcode);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		execution_failed = 1;
 		return;
 	}
