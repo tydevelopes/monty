@@ -10,7 +10,6 @@ char *parse_line(char *str)
 	char buffer[1024] = {0};
 	char delim = ' ';
 	int tokens_count = 0;
-	char *opcode = NULL;
 	int i = 0;
 
 	if (!str)
