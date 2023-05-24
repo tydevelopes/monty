@@ -5,10 +5,10 @@
  * @stack: pointer to the stack
  * Return: number of elements in the list
  */
-size_t stack_length(const stack_tt *stack)
+size_t stack_length(const stack_t *stack)
 {
 	size_t length = 0;
-	const stack_tt *current_node = NULL;
+	const stack_t *current_node = NULL;
 
 	if (!stack)
 		return (length);

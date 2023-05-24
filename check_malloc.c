@@ -4,7 +4,7 @@
  * check_malloc - checks if stack allocation failed
  * @ptr: pointer to allocated memory
  */
-void check_malloc_s(stack_tt *ptr)
+void check_malloc_s(stack_t *ptr)
 {
 	if (ptr == NULL)
 	{

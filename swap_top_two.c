@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * swap_top_two - swap top two element of a stack_tt
+ * swap_top_two - swap top two element of a stack_t
  * @stack: pointer to the list
  * @line_number: line number
  */
-void swap_top_two(stack_tt **stack, unsigned int line_number)
+void swap_top_two(stack_t **stack, unsigned int line_number)
 {
-	stack_tt *temp = NULL;
+	stack_t *temp = NULL;
 
 	if (!stack || !*stack || stack_length(*stack) < 2)
 	{

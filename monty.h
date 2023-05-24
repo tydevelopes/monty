@@ -26,7 +26,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-} stack_tt;
+} stack_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -39,24 +39,24 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_tt **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 void validate_args_count(int argc);
 void open_monty_file(char *filename, FILE **file);
-void check_malloc_s(stack_tt *ptr);
+void check_malloc_s(stack_t *ptr);
 void check_malloc_c(char *ptr);
 char *parse_line(char *str);
 void validate_opcode(char *opcode, unsigned int line_number);
 int is_all_digits(char *s);
-void push_to_stack(stack_tt **stack, unsigned int line_number);
-void print_stack(stack_tt **stack, unsigned int line_number);
-void print_top_of_stack(stack_tt **stack, unsigned int line_number);
-void delete_top_of_stack(stack_tt **stack, unsigned int line_number);
-size_t stack_length(const stack_tt *stack);
-void swap_top_two(stack_tt **stack, unsigned int line_number);
-void add_top_two(stack_tt **stack, unsigned int line_number);
-void do_nothing(stack_tt **stack, unsigned int line_number);
-void (*get_opcode_func(char *s))(stack_tt **, unsigned int);
+void push_to_stack(stack_t **stack, unsigned int line_number);
+void print_stack(stack_t **stack, unsigned int line_number);
+void print_top_of_stack(stack_t **stack, unsigned int line_number);
+void delete_top_of_stack(stack_t **stack, unsigned int line_number);
+size_t stack_length(const stack_t *stack);
+void swap_top_two(stack_t **stack, unsigned int line_number);
+void add_top_two(stack_t **stack, unsigned int line_number);
+void do_nothing(stack_t **stack, unsigned int line_number);
+void (*get_opcode_func(char *s))(stack_t **, unsigned int);
 
 #endif

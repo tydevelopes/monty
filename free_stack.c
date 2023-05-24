@@ -4,9 +4,9 @@
  * free_stack - frees a stack
  * @stack: pointer to begining of list
  */
-void free_stack(stack_tt *stack)
+void free_stack(stack_t *stack)
 {
-	stack_tt *curr_node = NULL;
+	stack_t *curr_node = NULL;
 
 	if (!stack)
 		return;

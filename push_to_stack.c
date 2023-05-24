@@ -5,16 +5,16 @@
  * @stack: pointer to stack pointer to the list
  * @line_number: line number
  */
-void push_to_stack(stack_tt **stack, unsigned int line_number)
+void push_to_stack(stack_t **stack, unsigned int line_number)
 {
-	stack_tt *current_node = NULL;
+	stack_t *current_node = NULL;
 
 	if (!is_all_digits(push_arg) || !push_arg)
 	{
 		fprintf(stderr, "L%d: usage: push integer %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
 	}
-	current_node = malloc(sizeof(stack_tt));
+	current_node = malloc(sizeof(stack_t));
 	check_malloc_s(current_node);
 
 	current_node->n = atoi(push_arg);

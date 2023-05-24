@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * delete_top_of_stack - delete top element of a stack_tt list
+ * delete_top_of_stack - delete top element of a stack_t list
  * @stack: pointer to the list
  * @line_number: line number
  */
-void delete_top_of_stack(stack_tt **stack, unsigned int line_number)
+void delete_top_of_stack(stack_t **stack, unsigned int line_number)
 {
-	stack_tt *temp = NULL;
+	stack_t *temp = NULL;
 
 	if (!stack || !*stack)
 	{

@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * add_top_two - add top two element of a stack_tt
+ * add_top_two - add top two element of a stack_t
  * @stack: pointer to the list
  * @line_number: line number
  */
-void add_top_two(stack_tt **stack, unsigned int line_number)
+void add_top_two(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack || stack_length(*stack) < 2)
 	{
