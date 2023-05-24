@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 
 		line_number++;
 		free(opcode);
+		opcode = NULL;
 		if (push_arg != NULL)
 			free(push_arg);
 		push_arg = NULL;
