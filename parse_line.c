@@ -17,7 +17,7 @@ char *parse_line(char *str)
 		return (NULL);
 	while (*str != '\0')
 	{
-		while (*str == delim)
+		while (*str == delim || isspace(*str))
 			str++;
 		if (*str == '\0' || *str == '\n')
 			break;
