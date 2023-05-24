@@ -12,7 +12,8 @@ void swap_top_two(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack || stack_length(*stack) < 2)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		execution_failed = 1;
+		return;
 	}
 	if (stack_length(*stack) == 2)
 	{

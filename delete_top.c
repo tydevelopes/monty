@@ -12,7 +12,8 @@ void delete_top_of_stack(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
+		execution_failed = 1;
+		return;
 	}
 	if (!(*stack)->next)
 	{

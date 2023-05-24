@@ -2,6 +2,7 @@
 
 char *push_arg = NULL;
 char *opcode = NULL;
+int execution_failed = 0;
 
 /**
  * main - program starting point
@@ -32,6 +33,10 @@ int main(int argc, char **argv)
 		exec_instruction = get_opcode_func(opcode);
 		exec_instruction(&stack, line_number);
 
+		if (execution_failed)
+		{
+			clean_up_and_exit(stack, file);
+		}
 		line_number++;
 		free(opcode);
 		opcode = NULL;

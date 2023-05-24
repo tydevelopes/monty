@@ -10,12 +10,13 @@ void div_top_two(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack || stack_length(*stack) < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		execution_failed = 1;
 	}
 	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
-		exit(EXIT_FAILURE);
+		execution_failed = 1;
+		return;
 	}
 	(*stack)->next->n = (*stack)->next->n / (*stack)->n;
 
