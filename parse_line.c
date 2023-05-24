@@ -21,7 +21,7 @@ char *parse_line(char *str)
 			str++;
 		if (*str == '\0' || *str == '\n')
 			break;
-		while (*str != delim && *str != '\0' && *str != '\n')
+		while (*str != delim && !isspace(*str) && *str != '\0' && *str != '\n')
 		{
 			buffer[i] = *str;
 			str++;
