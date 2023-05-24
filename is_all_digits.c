@@ -11,7 +11,7 @@ int is_all_digits(char *s)
 
 	while (*(s + i) != '\0')
 	{
-		if (!isdigit(*(s + i)))
+		if (*(s + i) != '-' && !isdigit(*(s + i)))
 			return (0);
 		i++;
 	}
