@@ -60,5 +60,8 @@ void do_nothing(stack_t **stack, unsigned int line_number);
 void (*get_opcode_func(char *s))(stack_t **, unsigned int);
 void free_stack(stack_t *stack);
 void clean_up_file(FILE **file);
+void sub_top_two(stack_t **stack, unsigned int line_number);
+void div_top_two(stack_t **stack, unsigned int line_number);
+void mul_top_two(stack_t **stack, unsigned int line_number);
 
 #endif
