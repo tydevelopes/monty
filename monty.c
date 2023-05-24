@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		validate_opcode(opcode, line_number);
 		if (execution_failed)
 			clean_up_and_exit(stack, file);
-			
+
 		exec_instruction = get_opcode_func(opcode);
 		exec_instruction(&stack, line_number);
 		if (execution_failed)
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		push_arg = NULL;
 	}
 	free_stack(stack);
-	clean_up_file(&file);
+	/*clean_up_file(&file);*/
 	fclose(file);
 
 	return (0);
