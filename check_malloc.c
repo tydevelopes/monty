@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * check_malloc - checks if stack allocation failed
+ * check_malloc_s - checks if stack allocation failed
  * @ptr: pointer to allocated memory
  */
 void check_malloc_s(stack_t *ptr)
@@ -14,7 +14,7 @@ void check_malloc_s(stack_t *ptr)
 }
 
 /**
- * check_malloc - checks if char allocation failed
+ * check_malloc_c - checks if char allocation failed
  * @ptr: pointer to allocated memory
  */
 void check_malloc_c(char *ptr)
