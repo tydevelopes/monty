@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 
 	while (fgets(buffer, BUFFER_SIZE, file) != NULL)
 	{
+		trunc_comment(buffer);
 		global_vars.opcode = parse_line(buffer);
 		if (!global_vars.opcode)
 		{
