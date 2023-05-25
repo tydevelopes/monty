@@ -20,7 +20,8 @@ void print_string(stack_t **stack, unsigned int line_number)
 
 	while (current_node && current_node->n > 0 && current_node->n <= 127)
 	{
-		printf("%c\n", current_node->n);
+		printf("%c", current_node->n);
 		current_node = current_node->next;
 	}
+	printf("\n");
 }
