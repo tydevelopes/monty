@@ -1,6 +1,7 @@
-		push -1 #Im comment
+		push 2 #Im comment
 #im also comment
-			push		3
+			push		73
+push 72
 
-pint
+pchar
 pall

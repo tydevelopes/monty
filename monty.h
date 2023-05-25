@@ -85,5 +85,6 @@ void mul_top_two(stack_t **stack, unsigned int line_number);
 void mod_top_two(stack_t **stack, unsigned int line_number);
 void clean_up_and_exit(stack_t *stack, FILE *file);
 void trunc_comment(char *str);
+void print_top_of_stack_as_char(stack_t **stack, unsigned int line_number);
 
 #endif
