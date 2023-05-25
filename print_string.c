@@ -18,12 +18,8 @@ void print_string(stack_t **stack, unsigned int line_number)
 
 	current_node = *stack;
 
-	while (current_node)
+	while (current_node && current_node->n > 0 && current_node->n <= 127)
 	{
-		if (current_node->n < 0 || current_node->n > 127 || current_node->n == 0)
-		{
-			break;
-		}
 		printf("%c\n", current_node->n);
 		current_node = current_node->next;
 	}
