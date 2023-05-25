@@ -20,6 +20,7 @@ void (*get_opcode_func(char *s))(stack_t **, unsigned int)
 	    {"mul", mul_top_two},
 	    {"mod", mod_top_two},
 	    {"pchar", print_top_of_stack_as_char},
+	    {"pstr", print_string},
 	    {NULL, NULL}};
 	int i;
 
