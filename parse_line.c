@@ -29,19 +29,19 @@ char *parse_line(char *str)
 		buffer[i] = '\0';
 		if (tokens_count == 0)
 		{
-			opcode = malloc(sizeof(char) * (strlen(buffer) + 1));
-			check_malloc_c(opcode);
-			strcpy(opcode, buffer);
+			global_vars.opcode = malloc(sizeof(char) * (strlen(buffer) + 1));
+			check_malloc_c(global_vars.opcode);
+			strcpy(global_vars.opcode, buffer);
 			tokens_count = 1;
 		}
 		else if (tokens_count == 1)
 		{
-			push_arg = malloc(sizeof(char) * (strlen(buffer) + 1));
-			check_malloc_c(push_arg);
-			strcpy(push_arg, buffer);
+			global_vars.push_arg = malloc(sizeof(char) * (strlen(buffer) + 1));
+			check_malloc_c(global_vars.push_arg);
+			strcpy(global_vars.push_arg, buffer);
 			break;
 		}
 		i = 0;
 	}
-	return (opcode);
+	return (global_vars.opcode);
 }

@@ -10,7 +10,7 @@ void print_top_of_stack(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		execution_failed = 1;
+		global_vars.execution_failed = 1;
 		return;
 	}
 	printf("%d\n", (*stack)->n);

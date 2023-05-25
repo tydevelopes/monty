@@ -9,16 +9,16 @@ void push_to_stack(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current_node = NULL;
 
-	if (!push_arg || !is_all_digits(push_arg))
+	if (!global_vars.push_arg || !is_all_digits(global_vars.push_arg))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		execution_failed = 1;
+		global_vars.execution_failed = 1;
 		return;
 	}
 	current_node = malloc(sizeof(stack_t));
 	check_malloc_s(current_node);
 
-	current_node->n = atoi(push_arg);
+	current_node->n = atoi(global_vars.push_arg);
 	current_node->next = NULL;
 	current_node->prev = NULL;
 

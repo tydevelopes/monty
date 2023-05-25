@@ -10,7 +10,7 @@ void sub_top_two(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack || stack_length(*stack) < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-		execution_failed = 1;
+		global_vars.execution_failed = 1;
 		return;
 	}
 	(*stack)->next->n = (*stack)->next->n - (*stack)->n;

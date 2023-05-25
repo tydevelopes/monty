@@ -1,8 +1,9 @@
 #include "monty.h"
 
-char *push_arg = NULL;
-char *opcode = NULL;
-int execution_failed = 0;
+/*char *push_arg = NULL;*/
+/*char *opcode = NULL;*/
+/*int execution_failed = 0;*/
+vars global_vars = {0, NULL, NULL};
 
 /**
  * main - program starting point
@@ -23,26 +24,26 @@ int main(int argc, char **argv)
 
 	while (fgets(buffer, BUFFER_SIZE, file) != NULL)
 	{
-		opcode = parse_line(buffer);
-		if (!opcode)
+		global_vars.opcode = parse_line(buffer);
+		if (!global_vars.opcode)
 		{
 			line_number++;
 			continue;
 		}
-		validate_opcode(opcode, line_number);
-		if (execution_failed)
+		validate_opcode(global_vars.opcode, line_number);
+		if (global_vars.execution_failed)
 			clean_up_and_exit(stack, file);
 
-		exec_instruction = get_opcode_func(opcode);
+		exec_instruction = get_opcode_func(global_vars.opcode);
 		exec_instruction(&stack, line_number);
-		if (execution_failed)
+		if (global_vars.execution_failed)
 			clean_up_and_exit(stack, file);
 		line_number++;
-		free(opcode);
-		opcode = NULL;
-		if (push_arg != NULL)
-			free(push_arg);
-		push_arg = NULL;
+		free(global_vars.opcode);
+		global_vars.opcode = NULL;
+		if (global_vars.push_arg != NULL)
+			free(global_vars.push_arg);
+		global_vars.push_arg = NULL;
 	}
 	free_stack(stack);
 	/*clean_up_file(&file);*/

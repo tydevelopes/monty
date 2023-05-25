@@ -23,7 +23,7 @@ void validate_opcode(char *opcode, unsigned int line_number)
 	if (!is_valid)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-		execution_failed = 1;
+		global_vars.execution_failed = 1;
 		return;
 	}
 }

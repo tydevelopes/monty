@@ -9,9 +9,25 @@
 
 #define BUFFER_SIZE 1024
 
-extern char *push_arg;
-extern char *opcode;
-extern int execution_failed;
+/*extern char *push_arg;*/
+/*extern char *opcode;*/
+/*extern int execution_failed;*/
+
+/**
+ * struct vars - used for global variables
+ * @execution_failed: integer
+ * @push_arg: pointer to string
+ * @opcode: pointer to string
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct vars
+{
+	int execution_failed;
+	char *push_arg;
+	char *opcode;
+} vars;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -42,6 +58,8 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+extern vars global_vars;
 
 void validate_args_count(int argc);
 void open_monty_file(char *filename, FILE **file);
