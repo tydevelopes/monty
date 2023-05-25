@@ -8,13 +8,13 @@
 void print_string(stack_t **stack, unsigned int line_number)
 {
 	const stack_t *current_node = NULL;
+	(void)line_number;
 
 	if (!stack || !*stack)
 	{
 		printf("\n");
 		return;
 	}
-	(void)line_number;
 
 	current_node = *stack;
 
