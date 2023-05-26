@@ -10,7 +10,7 @@ void rotate_right(stack_t **stack, unsigned int line_number)
 	stack_t *current_node = NULL;
 	(void)line_number;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || !(*stack)->next)
 		return;
 	/* Remove last element */
 	current_node = *stack;

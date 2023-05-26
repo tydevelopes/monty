@@ -11,7 +11,7 @@ void rotate_left(stack_t **stack, unsigned int line_number)
 	stack_t *current_node = NULL;
 	(void)line_number;
 
-	if (!stack || !*stack)
+	if (!stack || !*stack || !(*stack)->next)
 		return;
 	/* Remove top element */
 	temp = *stack;
