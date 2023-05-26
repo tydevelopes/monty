@@ -7,8 +7,8 @@
  */
 void validate_opcode(char *opcode, unsigned int line_number)
 {
-	char *opcodes[] = {"push", "pall", "pint", "pop", "swap", "add", "nop",
-			   "sub", "div", "mul", "mod", "pchar", "pstr", NULL};
+	char *opcodes[] = {"push", "pall", "pint", "pop", "swap", "add", "nop", "sub",
+			   "div", "mul", "mod", "pchar", "pstr", "rotl", "rotr", NULL};
 	int i = 0;
 	int is_valid = 0;
 

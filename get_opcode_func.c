@@ -21,6 +21,8 @@ void (*get_opcode_func(char *s))(stack_t **, unsigned int)
 	    {"mod", mod_top_two},
 	    {"pchar", print_top_of_stack_as_char},
 	    {"pstr", print_string},
+	    {"rotl", rotate_left},
+	    {"rotr", rotate_right},
 	    {NULL, NULL}};
 	int i;
 
